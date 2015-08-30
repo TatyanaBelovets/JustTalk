@@ -1,0 +1,30 @@
+﻿@model SocialNetwork1._1.Models.User
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+</head>
+<body>
+    <div>
+        @using (Html.BeginForm("Login", "Home", FormMethod.Post))
+        {
+            <fieldset>
+                @Html.LabelFor(model => model.Login) @Html.EditorFor(model => model.Login)
+                @Html.ValidationMessageFor(model => model.Login)
+                <br>
+                @Html.LabelFor(model => model.Password) @Html.EditorFor(model => model.Password)
+                @Html.ValidationMessageFor(model => model.Password)
+                <br>
+                <input type="submit" value="Войти" />
+            </fieldset>
+        }
+    </div>
+</body>
+</html>
